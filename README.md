@@ -18,7 +18,18 @@ Other players lose the money to the casino
 
 
 
+This project is buit up in ruby version 2.7 and rails version 5.0.7.2
 
+The development environment was backed up a postgresql db
+
+
+Setup:
+
+Execute these commands one by one
+   Bundle install
+    Rake db:setup
+    Rake db:migrate 
+    Rails s
 
 API
 
@@ -150,7 +161,7 @@ Casino:
               "gamestatus": "start",
               "created_at": "2020-04-23T12:33:28.210Z",
               "updated_at": "2020-04-23T12:33:28.210Z",
-              "betnumber": null
+              "thrownnumber": null
           }
       }
       
@@ -177,7 +188,7 @@ Casino:
                   "gamestarttime": "2020-04-23T12:33:28.210Z",
                   "created_at": "2020-04-23T12:33:28.210Z",
                   "updated_at": "2020-04-23T12:38:22.690Z",
-                  "betnumber": null
+                  "thrownnumber": null
               }
           }
        
@@ -197,7 +208,7 @@ Casino:
               "game": {
                   "dealer_id": 1,
                   "gamestatus": "complete",
-                  "betnumber": 35, -> THE NUMBER THROWN / OR THE NUMBER THAT THE BALL IS LANDED
+                  "thrownnumber": 35, -> THE NUMBER THROWN / OR THE NUMBER THAT THE BALL IS LANDED
                   "id": 4,
                   "gamestarttime": "2020-04-23T12:33:28.210Z",
                   "gameendtime": "2020-04-23T12:38:22.688Z",
@@ -322,6 +333,7 @@ Casino:
      Sample output
      {
         "success": true,
+        thrownnumber:35,
         "bets_won": [
             {
                 "user_id": 2,
