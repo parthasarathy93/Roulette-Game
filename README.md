@@ -2,14 +2,19 @@
 
 This simple api roulette game consists of three components Casino, Dealer, User
 Rules for playing roulette
-○ Dealer opens a game
-○ Multiple players can bet on which number the ball will land
-○ Dealer closes the game and throws the ball
+
+Dealer opens a game
+
+Multiple players can bet on which number the ball will land
+
+Dealer closes the game and throws the ball
 
 
 Rewards
-○ Players who bet on the correct number will get double the bet amount as reward
-○ Other players lose the money to the casino
+
+Players who bet on the correct number will get double the bet amount as reward
+ 
+Other players lose the money to the casino
 
 
 
@@ -21,7 +26,8 @@ Casino:
   A casino can have more than one dealer. A dealer may have many games, but at a time a dealer can start only one game
 
   Register a Casino
-  POST:  
+  
+    POST:  
     http://localhost:3000/casinos
     
     Body:
@@ -41,8 +47,10 @@ Casino:
        }
        
   Recharge a Casino
-    PUT:
+        
+      PUT:
       http://localhost:3000/casinos/<Casino_Id>/recharge
+      
       Example: http://localhost:3000/casinos/1/recharge
       
       Body:
@@ -61,8 +69,9 @@ Casino:
       }    
     
     
-    Add a Dealer to casino:
-       POST 
+  Add a Dealer to casino:
+        
+        POST 
          http://localhost:3000/casinos/<casino_id>dealers
          http://localhost:3000/casinos/1/dealers
          
@@ -81,10 +90,11 @@ Casino:
                }
           }
       
-     List all dealers in a casino
-     
+   List all dealers in a casino
+        
+         GET:
            http://localhost:3000/casinos/<casino_id>dealers
-       Example:
+         Example:
             http://localhost:3000/casinos/1/dealers
             
             Sample Output:
@@ -120,8 +130,9 @@ Casino:
      A Dealer is the one who starts the game, closes the bet on the game and throws the ball on the game
      A Dealer can start only one game at a time,so no need to pass the gameids, the api will get the current game and work
      
-     Start a game:
-      The dealer starts a bet in a table, where users can start betting   ,
+   Start a game:
+     
+     The dealer starts a bet in a table, where users can start betting   ,
       PUT:    
       http://localhost:3000/dealers/<dealer_id>/start
       EXAMPLE
@@ -145,8 +156,9 @@ Casino:
       
       
       
-      Stop a game:
-        Once the dealer stops /closes the game , no user can bet 
+   Stop a game:
+       
+       Once the dealer stops /closes the game , no user can bet 
         
         PUT:    
           http://localhost:3000/dealers/<dealer_id>/stop
@@ -169,7 +181,7 @@ Casino:
               }
           }
        
-    Throw ball in a game:
+  Throw ball in a game:
          
        Once the dealer stop, he throws the ball
         
@@ -199,7 +211,7 @@ Casino:
   USER:
     A user plays in the casino
     
-  REGISTER:
+    REGISTER:
      POST:
        http://localhost:3000/users
      BODY:
@@ -241,7 +253,8 @@ Casino:
         }
       }
   LIST ALL BETTABLE GAMES:
-    GET:
+       
+     GET:
       http://localhost:3000/users/<user_id>/games
       
      Example:
@@ -267,10 +280,11 @@ Casino:
   
   MAKE A BET:
    
-   POST:
+   
+    POST:
       http://localhost:3000/users/<user_id>/bets
      
-   EXAMPLE:
+    EXAMPLE:
       http://localhost:3000/users/2/bets
 
     BODY:
@@ -328,8 +342,11 @@ Casino:
     
    LIST ALL CASINOS:
    
-   http://localhost:3000/casinos
-   
+
+     GET:
+
+    http://localhost:3000/casinos
+
    
     Sample Output:
       {
@@ -346,6 +363,7 @@ Casino:
        }
   
    RECHARGE USER BALANCE:
+   
     PUT:
       http://localhost:3000/users/<user_id>/recharge
     
